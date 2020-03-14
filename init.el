@@ -159,11 +159,9 @@
   (load-theme 'zenburn t))
 
 ;; diminish
-(use-package diminish)
-
-;; abbrev
-(use-package abbrev
-  :diminish)
+(use-package diminish
+  :config
+  (diminish 'abbrev))
 
 ;; undo tree
 (use-package undo-tree
