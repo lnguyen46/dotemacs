@@ -1,11 +1,4 @@
 ;;; MELPA
-(require 'package)
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")))
-(package-initialize)
-
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -25,17 +18,6 @@
 ;; ===========================
 ;; ======== * INIT * =========
 ;; ===========================
-(or (file-exists-p package-user-dir)
-    (package-refresh-contents))
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(eval-when-compile
-  (require 'use-package)
-  (setq use-package-compute-statistics t))
-
 (require 'bind-key)
 
 ;; Keep emacs custom-settings in a separate file
