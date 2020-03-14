@@ -1,0 +1,11 @@
+(("dash.el" . "721436b04da4e2795387cb48a98ac6de37ece0fd")
+ ("dumb-jump" . "e8e9b0c2d1eda594fd40db9c64e93a70b426641b")
+ ("emacsmirror-mirror" . "dbc5764ba338f2df04c3949ac90ab232e55d857f")
+ ("f.el" . "1814209e2ff43cf2e6d38c4cd476218915f550fb")
+ ("gnu-elpa-mirror" . "bc2110cbf5ae44a167c87b89b113cfca1a6ed3ca")
+ ("melpa" . "f5fa4121cd4e2a49adfd23929c73f385cf7d1264")
+ ("popup-el" . "80829dd46381754639fb764da11c67235fe63282")
+ ("s.el" . "03410e6a7a2b11e47e1fea3b7d9899c7df26435e")
+ ("straight.el" . "ed54b626b0faec36fdaff30c72351d5fb41a6786")
+ ("use-package" . "42db6b3d90ee57d0f5947d3b0bf4b0010bdf7b40"))
+:alpha
