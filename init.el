@@ -319,7 +319,6 @@
 
 ;; projectile-mode
 (use-package projectile
-  :pin melpa-stable
   :diminish
   :config
   (projectile-mode)
@@ -328,7 +327,6 @@
 
 ;; magit
 (use-package magit
-  :pin melpa-stable
   :bind (("C-x g" . magit-status)
          ("C-c b" . magit-blame))
   :config
