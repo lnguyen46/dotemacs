@@ -13,7 +13,6 @@
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
 
 ;; ===========================
 ;; ======== * INIT * =========
@@ -155,19 +154,19 @@
 
 ;; zenburn theme
 (use-package zenburn-theme
-  :ensure t
+  :straight t
   :config
   (load-theme 'zenburn t))
 
 ;; diminish
 (use-package diminish
-  :ensure t
+  :straight t
   :config
   (diminish 'abbrev))
 
 ;; undo tree
 (use-package undo-tree
-  :ensure t
+  :straight t
   :defer 3
   :diminish
   :config
@@ -175,12 +174,12 @@
 
 ;; ibuffer
 (use-package ibuffer
-  :ensure t
+  :straight t
   :bind ("C-x C-b" . ibuffer))
 
 ;; mode icons
 (use-package mode-icons
-  :ensure t
+  :straight t
   :defer 3
   :config
   (mode-icons-mode)
@@ -188,7 +187,7 @@
 
 ;; helpful
 (use-package helpful
-  :ensure t
+  :straight t
   :bind (("C-c C-d" . helpful-at-point)
          ("C-h v" . helpful-variable)
          ("C-h k" . helpful-key)
@@ -197,7 +196,7 @@
 
 ;; highlight thing
 (use-package highlight-thing
-  :ensure t
+  :straight t
   :diminish
   :config
   (global-highlight-thing-mode)
@@ -207,7 +206,7 @@
 
 ;; buffer move
 (use-package buffer-move
-  :ensure t
+  :straight t
   :bind (("<M-s-up>" . buf-move-up)
          ("<M-s-down>" . buf-move-down)
          ("<M-s-left>" . buf-move-left)
@@ -215,7 +214,7 @@
 
 ;; eyebrowse
 (use-package eyebrowse
-  :ensure t
+  :straight t
   :bind (("s-1" . eyebrowse-switch-to-window-config-1)
          ("s-2" . eyebrowse-switch-to-window-config-2)
          ("s-3" . eyebrowse-switch-to-window-config-3)
@@ -231,7 +230,7 @@
 
 ;; yasnippet
 (use-package yasnippet-snippets
-  :ensure t
+  :straight t
   :defer 3
   :diminish yasnippet-snippets-mode
   :diminish yas-minor-mode
@@ -240,7 +239,7 @@
 
 ;; exec-path-from-file mac os x
 (use-package exec-path-from-shell
-  :ensure t
+  :straight t
   :defer 3
   :if (memq window-system '(mac ns x))
   :config
@@ -249,13 +248,13 @@
 
 ;; ag
 (use-package ag
-  :ensure t
+  :straight t
   :config
   (setq ag-highlight-search t))
 
 ;; rgrep
 (use-package deadgrep
-  :ensure t
+  :straight t
   :config
   (global-set-key (kbd "<f5>") #'deadgrep)
   (setq deadgrep-executable "rg")
@@ -269,7 +268,7 @@
 
 ;; dumb-jump
 (use-package dumb-jump
-  :ensure t
+  :straight t
   :bind (("M-g o" . dumb-jump-go-other-window)
          ("M-g j" . dumb-jump-go)
          ("M-g x" . dumb-jump-go-prefer-external)
@@ -280,7 +279,7 @@
 
 ;; ivy-mode
 (use-package ivy
-  :ensure t
+  :straight t
   :diminish
   :bind (("C-s" . swiper)
          ("C-r" . swiper)
@@ -306,11 +305,11 @@
   (setq enable-recursive-minibuffers t))
 
 (use-package counsel
-  :ensure t)
+  :straight t)
 
 ;; avy
 (use-package avy
-  :ensure t
+  :straight t
   :bind (("M-g f" . avy-goto-char-2-below)
          ("M-g b" . avy-goto-char-2-above)
          ("C-c C-j" . avy-resume)
@@ -321,7 +320,6 @@
 
 ;; which-key
 (use-package which-key
-  :ensure t
   :diminish
   :bind ("C-c M-=" . which-key-show-major-mode)
   :config
@@ -335,7 +333,7 @@
 
 ;; projectile-mode
 (use-package projectile
-  :ensure t
+  :straight t
   :diminish
   :config
   (projectile-mode)
@@ -344,7 +342,7 @@
 
 ;; magit
 (use-package magit
-  :ensure t
+  :straight t
   :bind (("C-x g" . magit-status)
          ("C-c b" . magit-blame))
   :config
@@ -352,14 +350,14 @@
 
 ;; ace-window
 (use-package ace-window
-  :ensure t
+  :straight t
   :bind ("C-." . ace-window)
   :config
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 ;; multiple cursors
 (use-package multiple-cursors
-  :ensure t
+  :straight t
   :bind (("C-S-c C-S-c" . mc/edit-lines)
          ("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
@@ -368,12 +366,12 @@
 
 ;; go to last change
 (use-package goto-last-change
-  :ensure t
+  :straight t
   :bind ("C-c s-\\" . goto-last-change))
 
 ;; expand-region
 (use-package expand-region
-  :ensure t
+  :straight t
   :bind (("C-= r" . er/expand-region)
          ("C-= d" . er/mark-defun)
          ("C-= s" . er/mark-symbol)
@@ -385,21 +383,22 @@
   :config
   ;; add/change/delete pairs based on expand-region
   (use-package embrace
-    :ensure t
+    :straight t
     :bind ("C-," . embrace-commander)))
 
 ;; smart-hungry-delete
 (use-package smart-hungry-delete
-  :ensure t
+  :straight t
   :defer nil ;; dont defer so we can add our functions to hooks
   :bind (:map prog-mode-map
          ("<s-backspace>" . smart-hungry-delete-backward-char)
          ("C-d" . smart-hungry-delete-forward-char))
   :config
   (smart-hungry-delete-add-default-hooks))
+
 ;; paredit
 (use-package paredit
-  :ensure t
+  :straight t
   :defer t
   :diminish
   :init
@@ -412,7 +411,7 @@
 
 ;; company mode
 (use-package company
-  :ensure t
+  :straight t
   :defer 3
   :diminish
   :bind (:map company-active-map
@@ -420,14 +419,13 @@
   :config
   (global-company-mode)
   (use-package company-quickhelp
-    :ensure t
     :config
     (company-quickhelp-mode)
     (setq company-quickhelp-delay nil)))
 
 ;; flycheck
 (use-package flycheck
-  :ensure t
+  :straight t
   :defer 2
   :diminish
   :config
@@ -444,6 +442,7 @@
   :mode (("\\.pdf\\'" . pdf-view-mode))
   :config
   (pdf-tools-install))
+
 ;; ledger
 (use-package ledger-mode)
 
@@ -452,7 +451,7 @@
   :mode "\\.gitlab-ci.yml\\'"
   :config
   (use-package gitlab-ci-mode-flycheck
-    :ensure t
+    :straight t
     :after flycheck
     :init
     (gitlab-ci-mode-flycheck-enable)))
@@ -493,7 +492,7 @@
   :mode ("\\.scm\\'" . scheme-mode)
   :config
   (use-package geiser
-    :ensure t
+    :straight t
     :config
     (setq geiser-mode-smart-tab-p t)
 
@@ -521,12 +520,12 @@
 
   ;; add color support for Sly REPL
   (use-package sly-repl-ansi-color
-    :ensure t
+    :straight t
     :config
     (push 'sly-repl-ansi-color sly-contribs))
 
   (use-package sly-macrostep
-    :ensure t)
+    :straight t)
   ;;; setup for looking up Hyperspec
   ;;; need to install https://www.hexstreamsoft.com/libraries/clhs/
   (let* ((ros-quicklisp-dir (expand-file-name ".roswell/lisp/quicklisp" "~/"))
@@ -558,7 +557,7 @@
   :mode ("\\.http\\'" . restclient-mode)
   :config
   (use-package company-restclient
-    :ensure t
+    :straight t
     :after company
     :config
     (add-to-list 'company-backends 'company-restclient)))
@@ -582,7 +581,7 @@
   (add-hook 'js-mode-hook (lambda () (tern-mode t)))
   :config
   (use-package company-tern
-    :ensure t
+    :straight t
     :after company
     :config
     (add-to-list 'company-backends 'company-tern))
@@ -597,7 +596,6 @@
 
 ;; js2-mode
 (use-package js2-mode
-  :ensure t
   :mode "\\.js\\'"
   :interpreter "node"
   :config
@@ -638,7 +636,7 @@
   :interpreter ("python" . python-mode)
   :config
   (use-package elpy
-    :ensure t
+    :straight t
     :diminish
     :config
     (elpy-enable)
@@ -654,11 +652,11 @@
   (setq ruby-insert-encoding-magic-comment nil)
 
   (use-package ruby-tools
-    :ensure t
+    :straight t
     :diminish ruby-tools-mode)
 
   (use-package yari
-    :ensure t)
+    :straight t)
 
   (use-package rinari
     :no-require t
@@ -667,7 +665,7 @@
     (global-rinari-mode))
 
   (use-package ruby-end
-    :ensure t
+    :straight t
     :diminish ruby-end-mode))
 
 ;; go
@@ -676,12 +674,12 @@
               ("C-c C-g" . godoc-at-point)
               ("M-." . godef-jump))
   :config
-  (use-package go-guru :ensure t)
+  (use-package go-guru :straight t)
 
   ;; when using with `dep`, need to run: `gocode install ./vendor/...`
   ;; ref: https://github.com/nsf/gocode/issues/491
   (use-package company-go
-    :ensure t
+    :straight t
     :after company
     :config
     (add-hook 'go-mode-hook (lambda ()
@@ -689,7 +687,7 @@
                               (company-mode)))
     (add-to-list 'company-backends 'company-go))
   (use-package go-eldoc
-    :ensure t
+    :straight t
     :config
     (add-hook 'go-mode-hook 'go-eldoc-setup))
 
