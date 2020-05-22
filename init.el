@@ -479,6 +479,10 @@
 ;; II, PROGRAMMING MODE
 ;; ####################
 
+;; eglot
+(use-package eglot
+  :straight t)
+
 ;; emmet mode
 (use-package emmet-mode
   :defer t
