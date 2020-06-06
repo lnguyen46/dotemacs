@@ -281,6 +281,7 @@
   (setq deadgrep-max-buffers 20))
 
 ;; wgrep
+(straight-use-package-lazy 'wgrep)
 (use-package wgrep
   :defer t
   :config
@@ -338,6 +339,7 @@
   (avy-setup-default))
 
 ;; which-key
+(straight-use-package-lazy 'which-key)
 (use-package which-key
   :diminish
   :bind ("C-c M-=" . which-key-show-major-mode)
@@ -345,6 +347,7 @@
   (which-key-mode))
 
 ;; popup window manager
+(straight-use-package-lazy 'popwin)
 (use-package popwin
   :bind-keymap ("C-z" . popwin:keymap)
   :config
@@ -442,6 +445,7 @@
               ("C-c h" . #'company-quickhelp-manual-begin))
   :config
   (global-company-mode)
+  (straight-use-package-lazy 'company-quickhelp)
   (use-package company-quickhelp
     :config
     (company-quickhelp-mode)
@@ -458,20 +462,24 @@
   (setq flycheck-check-syntax-automatically (list 'save)))
 
 ;; epub
+(straight-use-package-lazy 'nov)
 (use-package nov
   :mode ("\\.epub\\'" . nov-mode))
 
 ;; pdf
+(straight-use-package-lazy 'pdf-tools)
 (use-package pdf-tools
   :mode (("\\.pdf\\'" . pdf-view-mode))
   :config
   (pdf-tools-install))
 
 ;; ledger
+(straight-use-package-lazy 'ledger-mode)
 (use-package ledger-mode
   :mode "\\.ledger\\'")
 
 ;; gitlab ci
+(straight-use-package-lazy 'gitlab-ci-mode)
 (use-package gitlab-ci-mode
   :mode "\\.gitlab-ci.yml\\'"
   :config
@@ -489,6 +497,7 @@
   :straight t)
 
 ;; emmet mode
+(straight-use-package-lazy 'emmet-mode)
 (use-package emmet-mode
   :defer t
   :init
@@ -496,6 +505,7 @@
     (add-hook hook 'emmet-mode)))
 
 ;; web-mode
+(straight-use-package-lazy 'web-mode)
 (use-package web-mode
   :mode ("\\.phtml\\'" "\\.mustache\\'" "\\.handlebars\\'" "\\.hbs\\'"
          "\\.djhtml\\'" "\\.html?\\'" "\\.vue\\'")
@@ -503,20 +513,24 @@
   (electric-indent-mode 1))
 
 ;; haml mode
+(straight-use-package-lazy 'haml-mode)
 (use-package haml-mode
   :mode "\\.haml\\'")
 
 ;; dockerfile mode
+(straight-use-package-lazy 'dockerfile-mode)
 (use-package dockerfile-mode
   :mode "Dockerfile.*\\'")
 
 ;; racket
+(straight-use-package-lazy 'racket-mode)
 (use-package racket-mode
   :mode "\\.rkt\\'"
   :config
   (setq tab-always-indent 'complete))
 
 ;; scheme geiser
+(straight-use-package-lazy 'scheme)
 (use-package scheme
   :mode ("\\.scm\\'" . scheme-mode)
   :config
@@ -531,6 +545,7 @@
       (define-key geiser-repl-mode-map (kbd "C-.") nil))))
 
 ;; common Lisp
+(straight-use-package-lazy 'sly)
 (use-package sly
   :defer t
   :diminish
@@ -572,6 +587,7 @@
         (define-key sly-doc-map (kbd "l") 'sly-hyperspec-lookup-eww)))))
 
 ;; clojure cider
+(straight-use-package-lazy 'clj-refactor)
 (use-package clj-refactor
   :defer t
   :diminish
@@ -582,6 +598,7 @@
                                  (cljr-add-keybindings-with-prefix "C-c C-m"))))
 
 ;; restclient
+(straight-use-package-lazy 'restclient)
 (use-package restclient
   :mode ("\\.http\\'" . restclient-mode)
   :config
@@ -592,18 +609,22 @@
     (add-to-list 'company-backends 'company-restclient)))
 
 ;; yaml-mode
+(straight-use-package-lazy 'yaml-mode)
 (use-package yaml-mode
   :mode "\\.yml\\'")
 
 ;; terraform
+(straight-use-package-lazy 'terraform-mode)
 (use-package terraform-mode
   :mode "\\.tf\\'")
 
 ;; elasticsearch mode
+(straight-use-package-lazy 'es-mode)
 (use-package es-mode
   :mode "\\.es$")
 
 ;; tern-mode
+(straight-use-package-lazy 'tern)
 (use-package tern
   :defer t
   :init
@@ -624,6 +645,7 @@
   (autoload 'tern-mode "tern/emacs/tern.el" nil t))
 
 ;; js2-mode
+(straight-use-package-lazy 'js2-mode)
 (use-package js2-mode
   :mode "\\.js\\'"
   :interpreter "node"
@@ -637,10 +659,12 @@
           (delete-char sgml-basic-offset)))))
 
 ;; json-mode
+(straight-use-package-lazy 'json-mode)
 (use-package json-mode
   :mode "\\.json\\'")
 
 ;; jq-mode
+(straight-use-package-lazy 'jq-mode)
 (use-package jq-mode
   :mode "\\.jq$"
   :config
@@ -648,6 +672,7 @@
     (define-key json-mode-map (kbd "C-c C-j") #'jq-interactively)))
 
 ;; markdown mode
+(straight-use-package-lazy 'markdown-mode)
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
@@ -659,6 +684,7 @@
   (setq markdown-command "multimarkdown"))
 
 ;; python
+(straight-use-package-lazy 'python)
 (use-package python
   :diminish
   :mode ("\\.py\\'" . python-mode)
@@ -674,6 +700,7 @@
     (setq elpy-rpc-backend "jedi")))
 
 ;; ruby
+(straight-use-package-lazy 'ruby-mode)
 (use-package ruby-mode
   :mode "\\.rb\\'"
   :interpreter "ruby"
@@ -698,10 +725,12 @@
     :diminish ruby-end-mode))
 
 ;; go
+(straight-use-package-lazy 'go-mode)
 (use-package go-mode
   :mode "\\*\\.go")
 
 ;; C/C++
+(straight-use-package-lazy 'clang-format)
 (use-package clang-format
   :defer t
   :init
@@ -715,6 +744,7 @@
   :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'"))
 
 ;; ocaml
+(straight-use-package-lazy 'tuareg)
 (use-package tuareg
   :mode ("\\.ml[ip]?\\'" . tuareg-mode)
   :config
