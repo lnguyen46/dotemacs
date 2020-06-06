@@ -19,6 +19,7 @@
  ("eyebrowse" . "e483d35e905c2e26fac63f33c77b9e764729a364")
  ("f.el" . "1814209e2ff43cf2e6d38c4cd476218915f550fb")
  ("flycheck" . "f77c3c0ff0a6399fe03fb6062a43861b94cf8f1e")
+ ("forge" . "2e2d26cf428012f0ece53a81cde02179e72648aa")
  ("gnu-elpa-mirror" . "bc2110cbf5ae44a167c87b89b113cfca1a6ed3ca")
  ("goto-last-change.el" . "58b0928bc255b47aad318cd183a5dce8f62199cc")
  ("helpful" . "c54e9ddbd6a77858048c1a4c4b549de98af8f88e")
