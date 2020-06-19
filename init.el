@@ -460,18 +460,6 @@
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc emacs-lisp))
   (setq flycheck-check-syntax-automatically (list 'save)))
 
-;; epub
-(straight-use-package-lazy 'nov)
-(use-package nov
-  :mode ("\\.epub\\'" . nov-mode))
-
-;; pdf
-(straight-use-package-lazy 'pdf-tools)
-(use-package pdf-tools
-  :mode (("\\.pdf\\'" . pdf-view-mode))
-  :config
-  (pdf-tools-install))
-
 ;; ledger
 (straight-use-package-lazy 'ledger-mode)
 (use-package ledger-mode
