@@ -346,6 +346,14 @@
   :config
   (which-key-mode))
 
+;; psession
+(use-package psession
+  :straight t
+  :diminish
+  :config
+  (psession-mode 1)
+  (psession-autosave-mode 1))
+
 ;; popup window manager
 (straight-use-package-lazy 'popwin)
 (use-package popwin
