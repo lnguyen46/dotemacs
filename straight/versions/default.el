@@ -71,6 +71,7 @@
  ("straight.el" . "ed54b626b0faec36fdaff30c72351d5fb41a6786")
  ("swiper" . "8fae568daafdc79d4990ad739bac42ee230d3234")
  ("tern" . "a295a80a502771cc07dc061961e0eb85343c2925")
+ ("terraform-doc" . "d609290021ea7f2d10caadffc9131663838f8ad4")
  ("terraform-mode" . "2967e7bdc05d15617e121052f6e43c61439b9070")
  ("transient" . "a269614c69ad8b2703e6e5093d0017d6afad6cca")
  ("treepy.el" . "306f7031d26e4ebfc9ff36614acdc6993f3e23c3")

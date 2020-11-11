@@ -613,6 +613,10 @@
 (use-package terraform-mode
   :mode "\\.tf\\'")
 
+;; terraform-doc
+(straight-use-package-lazy 'terraform-doc)
+(use-package terraform-doc)
+
 ;; elasticsearch mode
 (straight-use-package-lazy 'es-mode)
 (use-package es-mode
