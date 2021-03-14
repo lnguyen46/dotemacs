@@ -544,11 +544,8 @@
 (use-package sly
   :defer t
   :diminish
-  :bind (()
-         :map sly-mode-map
-         ("C-c M-p" . sly-pprint-eval-last-expression)
-         :map sly-mrepl-mode-map
-         ("C-r" . isearch-backward))
+  :bind (:map sly-mode-map
+         ("C-c M-p" . sly-pprint-eval-last-expression))
   :config
   (setq sly-lisp-implementations
         '((sbcl ("ros" "-L" "sbcl" "-Q" "-l" "~/.sbclrc" "run"))
@@ -556,6 +553,13 @@
 
   ;; prevent this key-binding shadowing projectile prefix'
   (define-key sly-mode-map (kbd "C-c p") nil)
+  ;; multiple REPLs multiplexed over a single Slime socket
+  (use-package sly-mrepl
+    :after sly
+    :bind (:map sly-mrepl-mode-map
+                ("C-r" . isearch-backward))
+    :config
+    (push 'sly-mrepl sly-contribs))
 
   ;; add color support for Sly REPL
   (use-package sly-repl-ansi-color
@@ -565,6 +569,7 @@
 
   (use-package sly-macrostep
     :straight t)
+
   ;;; setup for looking up Hyperspec
   ;;; need to install https://www.hexstreamsoft.com/libraries/clhs/
   (let* ((ros-quicklisp-dir (expand-file-name ".roswell/lisp/quicklisp" "~/"))
