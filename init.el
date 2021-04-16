@@ -51,6 +51,7 @@
 (prefer-coding-system 'utf-8)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(winner-mode 1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; place auto-save file to $TMPDIR
