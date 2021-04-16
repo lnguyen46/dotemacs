@@ -720,12 +720,6 @@
   (use-package yari
     :straight t)
 
-  (use-package rinari
-    :no-require t
-    :diminish rinari-minor-mode
-    :config
-    (global-rinari-mode))
-
   (use-package ruby-end
     :straight t
     :diminish ruby-end-mode))
