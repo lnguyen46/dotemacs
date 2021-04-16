@@ -276,8 +276,9 @@
 ;; rgrep
 (use-package deadgrep
   :straight t
+  :bind (("M-s-s" . deadgrep)
+         ("<f5>" . deadgrep))
   :config
-  (global-set-key (kbd "<f5>") #'deadgrep)
   (setq deadgrep-executable "rg")
   (setq deadgrep-max-buffers 20))
 
