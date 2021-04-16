@@ -636,12 +636,6 @@
   :init
   (add-hook 'js-mode-hook (lambda () (tern-mode t)))
   :config
-  (use-package company-tern
-    :straight t
-    :after company
-    :config
-    (add-to-list 'company-backends 'company-tern))
-
   (let* ((node-path (shell-command-to-string "echo $NODE_PATH"))
          (path-list (split-string node-path ":")))
     (dolist (p path-list)
